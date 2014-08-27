@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="2.0.1">
+<database-model author="" begin-script="" end-script="" id="11e437b:13d015a9d4c:-8000" name="BaseDatos" sql-dialect-id="jp.azzurri.clay.dialect.HSQLDB_1_7_0_Dialect" version="1.0">
+<schema-list>
+<schema id="11e437b:13d015a9d4c:-7ffd" name="DEFAULT_SCHEMA">
+<table-list>
+<table id="11e437b:13d015a9d4c:-7fff" name="PROPIETARIO">
+<column-list>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ffa" mandatory="true" name="NIF">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff9" mandatory="false" name="NOMBRE">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff8" mandatory="false" name="DIRECCION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff5" mandatory="false" name="POBLACION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="9" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff4" mandatory="false" name="TELEFONO">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff3" mandatory="false" name="OBSERVACIONES">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff2" mandatory="false" name="FECHA_ALTA">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="40" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7ff1" mandatory="false" name="ENTIDAD">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fee" mandatory="false" name="NUMERO_CUENTA">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7ffe" name="PK_PROPIETARIO">
+<primary-key-column name="NIF"/>
+</primary-key>
+</table>
+<table id="11e437b:13d015a9d4c:-7feb" name="INMUEBLE">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fe3" mandatory="true" name="ID_INMUEBLE">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fe7" mandatory="false" name="ESCALERA">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fe6" mandatory="false" name="PISO">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fe5" mandatory="false" name="PUERTA">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fe4" mandatory="false" name="PORCENTAJE">
+<data-type name="FLOAT" selected-variant-pattern="FLOAT"/>
+</column>
+<column auto-increment="false" column-size="10" decimal-digits="0" default-value="" id="a53726:13d04160c3f:-7fa6" mandatory="true" name="NIF">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="17e3e11:13d04351ba3:-7e2f" mandatory="true" name="ID_COMUNIDAD">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fea" name="PK_INMUEBLE">
+<primary-key-column name="ID_INMUEBLE"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="a53726:13d04160c3f:-7fa8" name="FK_INMUEBLE_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PROPIETARIO" referenced-table="PROPIETARIO" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="NIF" referenced-key-column-name="NIF"/>
+</foreign-key>
+<foreign-key id="17e3e11:13d04351ba3:-7e31" name="FK_INMUEBLE_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_COMUNIDAD" referenced-table="COMUNIDAD" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_COMUNIDAD" referenced-key-column-name="ID_COMUNIDAD"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="11e437b:13d015a9d4c:-7fe2" name="COMUNIDAD">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fdb" mandatory="true" name="ID_COMUNIDAD">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fde" mandatory="false" name="CALLE">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fdd" mandatory="false" name="MAX_RECIBOS_PENDIENTES">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fdc" mandatory="false" name="ESTADO">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fe1" name="PK_COMUNIDAD">
+<primary-key-column name="ID_COMUNIDAD"/>
+</primary-key>
+</table>
+<table id="11e437b:13d015a9d4c:-7fda" name="FACTURA">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fd6" mandatory="true" name="NUM_FACTURA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fd3" mandatory="false" name="FECHA_FACTURA">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="1212c2f:13d031ab39c:-7c73" mandatory="true" name="ID_COMUNIDAD">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fd9" name="PK_FACTURA">
+<primary-key-column name="NUM_FACTURA"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="1212c2f:13d031ab39c:-7c75" name="FK_FACTURA_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_COMUNIDAD" referenced-table="COMUNIDAD" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_COMUNIDAD" referenced-key-column-name="ID_COMUNIDAD"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="11e437b:13d015a9d4c:-7fd2" name="NOTA_INFORMATIVA">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fcc" mandatory="true" name="ID_NOTA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fce" mandatory="false" name="FECHA_CALCULO">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fcd" mandatory="false" name="IMPORTE_NOTA">
+<data-type name="FLOAT" selected-variant-pattern="FLOAT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="1212c2f:13d031ab39c:-7c8f" mandatory="true" name="ID_COMUNIDAD">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="a53726:13d04160c3f:-7eba" mandatory="true" name="NUM_FACTURA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fd1" name="PK_NOTA_INFORMATIVA">
+<primary-key-column name="ID_NOTA"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="1212c2f:13d031ab39c:-7c91" name="FK_NOTA_INFORMATIVA_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_COMUNIDAD" referenced-table="COMUNIDAD" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_COMUNIDAD" referenced-key-column-name="ID_COMUNIDAD"/>
+</foreign-key>
+<foreign-key id="a53726:13d04160c3f:-7ebc" name="FK_NOTA_INFORMATIVA_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_FACTURA" referenced-table="FACTURA" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="0..1" target-relationship-type="">
+<foreign-key-column column-name="NUM_FACTURA" referenced-key-column-name="NUM_FACTURA"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="11e437b:13d015a9d4c:-7fc7" name="RECIBO_INMUEBLE">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fc1" mandatory="true" name="ID_RECIBO">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fc3" mandatory="false" name="FECHA_PAGO">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fc2" mandatory="false" name="IMPORTE">
+<data-type name="FLOAT" selected-variant-pattern="FLOAT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="1212c2f:13d031ab39c:-7d2c" mandatory="true" name="ID_INMUEBLE">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="a53726:13d04160c3f:-7d45" mandatory="true" name="ID_NOTA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fc6" name="PK_RECIBO_INMUEBLE">
+<primary-key-column name="ID_RECIBO"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="1212c2f:13d031ab39c:-7d2e" name="FK_RECIBO_INMUEBLE_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_INMUEBLE" referenced-table="INMUEBLE" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_INMUEBLE" referenced-key-column-name="ID_INMUEBLE"/>
+</foreign-key>
+<foreign-key id="a53726:13d04160c3f:-7d47" name="FK_RECIBO_INMUEBLE_2" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_NOTA_INFORMATIVA" referenced-table="NOTA_INFORMATIVA" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_NOTA" referenced-key-column-name="ID_NOTA"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="11e437b:13d015a9d4c:-7fc0" name="LINEA_FACTURA">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fb8" mandatory="true" name="ID_LINEA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fbc" mandatory="false" name="IMPORTE_LINEA">
+<data-type name="FLOAT" selected-variant-pattern="FLOAT"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fbb" mandatory="false" name="OBSERVACION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="1212c2f:13d031ab39c:-7c0d" mandatory="true" name="CLAVE_CONCEPTO">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="a53726:13d04160c3f:-7d97" mandatory="true" name="NUM_FACTURA">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fbf" name="PK_LINEA_FACTURA">
+<primary-key-column name="ID_LINEA"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="1212c2f:13d031ab39c:-7c0f" name="FK_LINEA_FACTURA_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_CONCEPTO" referenced-table="CONCEPTO" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="CLAVE_CONCEPTO" referenced-key-column-name="CLAVE_CONCEPTO"/>
+</foreign-key>
+<foreign-key id="a53726:13d04160c3f:-7d69" name="FK_LINEA_FACTURA_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_LINEA_FACTURA" referenced-table="LINEA_FACTURA" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_LINEA" referenced-key-column-name="ID_LINEA"/>
+</foreign-key>
+<foreign-key id="a53726:13d04160c3f:-7d99" name="FK_LINEA_FACTURA_2" on-delete="CASCADE" on-update="UNSPECIFIED" referenced-key="PK_FACTURA" referenced-table="FACTURA" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="NUM_FACTURA" referenced-key-column-name="NUM_FACTURA"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="11e437b:13d015a9d4c:-7fb5" name="CONCEPTO">
+<column-list>
+<column auto-increment="true" column-size="0" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fb1" mandatory="true" name="CLAVE_CONCEPTO">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="100" decimal-digits="0" default-value="" id="11e437b:13d015a9d4c:-7fae" mandatory="false" name="DESCRIPCION">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+</column-list>
+<primary-key id="11e437b:13d015a9d4c:-7fb4" name="PK_CONCEPTO">
+<primary-key-column name="CLAVE_CONCEPTO"/>
+</primary-key>
+</table>
+<table id="17e3e11:13d04351ba3:-7fca" name="PRESIDENTE">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="17e3e11:13d04351ba3:-7ede" mandatory="true" name="ID_COMUNIDAD">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="17e3e11:13d04351ba3:-7e92" mandatory="true" name="ID_INMUEBLE">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+</column-list>
+<primary-key id="17e3e11:13d04351ba3:-7fc9" name="PK_PRESIDENTE">
+<primary-key-column name="ID_COMUNIDAD"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="17e3e11:13d04351ba3:-7ee0" name="FK_PRESIDENTE_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_COMUNIDAD" referenced-table="COMUNIDAD" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_COMUNIDAD" referenced-key-column-name="ID_COMUNIDAD"/>
+</foreign-key>
+<foreign-key id="17e3e11:13d04351ba3:-7e94" name="FK_PRESIDENTE_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_INMUEBLE" referenced-table="INMUEBLE" referenced-table-schema="DEFAULT_SCHEMA" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="ID_INMUEBLE" referenced-key-column-name="ID_INMUEBLE"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+<diagram>
+<table-figure height="189" refid="11e437b:13d015a9d4c:-7fff" width="190" x="873" y="23"/>
+<table-figure height="182" refid="11e437b:13d015a9d4c:-7feb" width="196" x="467" y="20"/>
+<table-figure height="178" refid="11e437b:13d015a9d4c:-7fe2" width="243" x="63" y="96"/>
+<table-figure height="78" refid="11e437b:13d015a9d4c:-7fda" width="196" x="50" y="738"/>
+<table-figure height="141" refid="11e437b:13d015a9d4c:-7fd2" width="167" x="264" y="436"/>
+<table-figure height="98" refid="11e437b:13d015a9d4c:-7fc7" width="137" x="586" y="430"/>
+<table-figure height="128" refid="11e437b:13d015a9d4c:-7fc0" width="190" x="866" y="693"/>
+<table-figure height="103" refid="11e437b:13d015a9d4c:-7fb5" width="437" x="797" y="529"/>
+<table-figure height="71" refid="17e3e11:13d04351ba3:-7fca" width="141" x="133" y="5"/>
+</diagram>
+</clay-model>

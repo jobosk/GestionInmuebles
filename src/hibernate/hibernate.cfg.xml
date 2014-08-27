@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:hsql://localhost/proyecto</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+      	<mapping resource="hibernate/ReciboInmueble.hbm.xml" />
+        <mapping resource="hibernate/NotaInformativa.hbm.xml" />
+        <mapping resource="hibernate/LineaFactura.hbm.xml" />
+        <mapping resource="hibernate/Inmueble.hbm.xml" />
+        <mapping resource="hibernate/Comunidad.hbm.xml" />
+        <mapping resource="hibernate/Factura.hbm.xml" />
+        <mapping resource="hibernate/Concepto.hbm.xml" />
+        <mapping resource="hibernate/Propietario.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

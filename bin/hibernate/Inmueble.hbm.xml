@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-abr-2013 19:22:03 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Inmueble" table="INMUEBLE" schema="PUBLIC">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="comunidad" class="hibernate.Comunidad" fetch="select">
+            <column name="ID_COMUNIDAD" not-null="true" />
+        </many-to-one>
+        <many-to-one name="propietario" class="hibernate.Propietario" fetch="select">
+            <column name="NIF" not-null="true" />
+        </many-to-one>
+        <property name="escalera" type="string">
+            <column name="ESCALERA" length="12" />
+        </property>
+        <property name="piso" type="string">
+            <column name="PISO" length="12" />
+        </property>
+        <property name="puerta" type="string">
+            <column name="PUERTA" length="10" />
+        </property>
+        <property name="porcentaje" type="java.lang.Double">
+            <column name="PORCENTAJE" precision="17" scale="0" />
+        </property>
+        <set name="reciboInmuebles" inverse="true" lazy="true" table="RECIBO_INMUEBLE" fetch="select">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="hibernate.ReciboInmueble" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-abr-2013 19:22:03 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="hibernate.Comunidad" table="COMUNIDAD" schema="PUBLIC">
+        <id name="idComunidad" type="int">
+            <column name="ID_COMUNIDAD" />
+            <generator class="assigned" />
+        </id>
+        <property name="calle" type="string">
+            <column name="CALLE" length="12" />
+        </property>
+        <property name="maxRecibosPendientes" type="java.lang.Integer">
+            <column name="MAX_RECIBOS_PENDIENTES" />
+        </property>
+        <property name="estado" type="string">
+            <column name="ESTADO" length="12" />
+        </property>
+        <set name="facturas" inverse="true" lazy="true" table="FACTURA" fetch="select">
+            <key>
+                <column name="ID_COMUNIDAD" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Factura" />
+        </set>
+        <set name="notaInformativas" inverse="true" lazy="true" table="NOTA_INFORMATIVA" fetch="select">
+            <key>
+                <column name="ID_COMUNIDAD" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.NotaInformativa" />
+        </set>
+        <set name="inmuebles" inverse="true" lazy="true" table="INMUEBLE" fetch="select">
+            <key>
+                <column name="ID_COMUNIDAD" not-null="true" />
+            </key>
+            <one-to-many class="hibernate.Inmueble" />
+        </set>
+    </class>
+</hibernate-mapping>

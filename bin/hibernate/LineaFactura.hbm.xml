@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29-abr-2013 19:22:03 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="hibernate.LineaFactura" table="LINEA_FACTURA" schema="PUBLIC">
+        <id name="idLinea" type="int">
+            <column name="ID_LINEA" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="factura" class="hibernate.Factura" fetch="select">
+            <column name="NUM_FACTURA" not-null="true" />
+        </many-to-one>
+        <many-to-one name="concepto" class="hibernate.Concepto" fetch="select">
+         
+            <column name="ID_CONCEPTO" not-null="true" />
+         
+        </many-to-one>
+ 
+        <property name="importeLinea" type="java.lang.Double">
+            <column name="IMPORTE_LINEA" precision="17" scale="0" />
+        </property>
+        <property name="observacion" type="string">
+            <column name="OBSERVACION" length="12" />
+        </property>
+    </class>
+</hibernate-mapping>
